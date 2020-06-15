@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { ThemeProvider } from 'theme-ui'
+import {Box, Flex} from 'rebass';
+
+import { neo4jTheme } from './neo4j-theme';
+import { PlayDeck } from './components/play-deck';
+
+import { useFetch } from './hooks';
+
+// const deckUrl = require('./content/pure-text.md');
+const deckUrl = require('./content/layouts.md');
+// const deckUrl = require('./content/remarkedup.md');
+
+const components = {
+  Box: Box, 
+  Flex: Flex
+}
+const App = () => {
+  const [deck, loading] = useFetch(deckUrl);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={neo4jTheme} >
+      <PlayDeck deck={deck} />
+    </ThemeProvider>
   );
 }
 
