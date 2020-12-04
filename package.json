@@ -20,7 +20,7 @@
     "@types/react-dom": "^16.9.0",
     "buble": "^0.20.0",
     "buble-jsx-only": "^0.19.8",
-    "highlight.js": "^10.1.0",
+    "highlight.js": "^10.4.1",
     "modularscale-js": "^3.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
